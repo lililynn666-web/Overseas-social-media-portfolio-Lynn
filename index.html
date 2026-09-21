@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#FAFAFA" />
+<title>Lynn Li — Selected Works 2026</title>
+<meta name="description" content="Lynn Li 包装设计与香氛影像作品集 — 横向卡片墙 · 中心聚焦浏览" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- 开场幕布 -->
+<div class="veil" id="veil" aria-hidden="true"></div>
+
+<!-- 顶部导航 -->
+<header class="siteHeader" id="siteHeader">
+  <div class="siteHeader__left">
+    <a class="brand" href="#" data-no-drag>Lynn<span class="brand__thin">Li</span></a>
+    <nav class="nav">
+      <button class="nav__link" id="indexBtn" type="button" data-no-drag>Selected, Index</button>
+    </nav>
+  </div>
+  <div class="siteHeader__right">
+    <span class="count count--dim">Vol. 2026</span>
+  </div>
+</header>
+
+<!-- 画廊舞台 -->
+<main class="stage" id="stage">
+  <div class="gallery" id="gallery">
+    <div class="track" id="track"><!-- 卡片由 JS 生成 --></div>
+  </div>
+
+  <button class="navBtn navBtn--prev" id="prevBtn" type="button" aria-label="上一件作品">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4 7 12l8 8" /></svg>
+  </button>
+  <button class="navBtn navBtn--next" id="nextBtn" type="button" aria-label="下一件作品">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4l8 8-8 8" /></svg>
+  </button>
+
+  <div class="progressRail" aria-hidden="true"><i id="railBar"></i></div>
+</main>
+
+<!-- 底部页脚 -->
+<footer class="siteFooter" id="siteFooter">
+  <span class="siteFooter__cell siteFooter__cell--mid">
+    Drag to explore · Click to focus · <kbd>←</kbd> <kbd>→</kbd> · <kbd>ESC</kbd> to exit
+  </span>
+</footer>
+
+<!-- 焦点模式（放大浏览） -->
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="作品详情">
+  <div class="lightbox__scroll">
+    <div class="lightbox__inner">
+      <div class="frame" id="frame">
+        <div class="frame__media" id="frameMedia"></div>
+        <div class="frame__ui" id="frameUi"></div>
+        <div class="frame__badge" id="frameBadge" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" /></svg>
+        </div>
+      </div>
+      <div class="label" id="label"></div>
+    </div>
+  </div>
+  <button class="lightbox__close" id="closeBtn" type="button" aria-label="关闭">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+  </button>
+  <div class="lightbox__counter" id="counter">01 / 09</div>
+</div>
+
+<!-- Index 索引抽屉 -->
+<div class="index" id="indexPanel" aria-hidden="true">
+  <div class="index__head">
+    <span class="index__eyebrow">Selected Works — 2026</span>
+    <button class="index__close" id="indexClose" type="button" aria-label="关闭索引">
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" /></svg>
+    </button>
+  </div>
+  <ol class="index__list" id="indexList"></ol>
+  <div class="index__foot">
+    <span>Lynn Li · Packaging &amp; Fragrance</span>
+    <span>09 Projects</span>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
